@@ -21,8 +21,9 @@ func InitRouter() *gin.Engine {
 	PublicGroup := r.Group("")
 	// PrivateGroup := r.Group("")
 	{
-		routers.V1Router(PublicGroup) // v1基础路由
-		routers.V2Router(PublicGroup) // v1基础路由
+		routers.V1Router(PublicGroup)    // v1基础路由
+		routers.V2Router(PublicGroup)    // v1基础路由
+		routers.StudyRouter(PublicGroup) //study基础路由
 	}
 
 	return r

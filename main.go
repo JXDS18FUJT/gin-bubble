@@ -29,6 +29,7 @@ func main() {
 	defer dao.Close() // 程序退出关闭数据库连接
 	// 模型绑定
 	dao.DB.AutoMigrate(&models.Todo{})
+	dao.DB.AutoMigrate(&models.Study{})
 	// 注册路由
 	r := initialize.InitRouter()
 	if err := r.Run(fmt.Sprintf(":%d", setting.Conf.Port)); err != nil {
